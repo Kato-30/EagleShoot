@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance { get; private set; }
     private int score = 0;
     private int highScore = 0;
     private int coin = 0;
@@ -29,9 +29,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         Time.timeScale = 0;
-        AudioManager.instance.sfxSource.Stop();
+        AudioManager.Instance.sfxSource.Stop();
         DisCursor();
     }
 

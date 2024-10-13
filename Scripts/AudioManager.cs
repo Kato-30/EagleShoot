@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManager Instance { get; private set; }
     public AudioSource backgroundSource;
     public AudioSource sfxSource;
     public AudioClip shootSound;
@@ -15,9 +15,9 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -41,7 +41,6 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.PlayOneShot(reloadSound);
     }
-
 
     public void PlayEagleFlySound()
     {

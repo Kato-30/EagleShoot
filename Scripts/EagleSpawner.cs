@@ -35,7 +35,7 @@ public class EagleSpawner : MonoBehaviour
         {
             Vector2 randomPosition = (Vector2)transform.position + Random.insideUnitCircle.normalized * spawnRadius;
             Instantiate(eaglePrefabs, randomPosition, Quaternion.identity);
-            AudioManager.instance.PlayEagleFlySound();
+            AudioManager.Instance.PlayEagleFlySound();
         }
     }
 }

@@ -44,12 +44,12 @@ public class Gun : MonoBehaviour
         if (bulletPrefabs != null)
         {
             Instantiate(bulletPrefabs, firePoint.position, firePoint.rotation);
-            AudioManager.instance.PlayShootSound();
-            GameManager.instance.UpdateBullet();
+            AudioManager.Instance.PlayShootSound();
+            GameManager.Instance.UpdateBullet();
             currentAmmo--;
             if (currentAmmo <= 0)
             {
-                GameManager.instance.Ammo(true);
+                GameManager.Instance.Ammo(true);
                 Debug.Log("Hết đạn !!!");
             }
         }
@@ -58,8 +58,8 @@ public class Gun : MonoBehaviour
     void ReloadAmmo()
     {
         currentAmmo = maxAmmo;
-        AudioManager.instance.PlayReloadSound();
-        GameManager.instance.Ammo(false);
+        AudioManager.Instance.PlayReloadSound();
+        GameManager.Instance.Ammo(false);
         PlayerPrefs.SetInt("Ammo", currentAmmo);
         Debug.Log("Đã nạp đạn !!!");
     }

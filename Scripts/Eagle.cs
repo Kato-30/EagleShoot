@@ -29,7 +29,7 @@ public class Eagle : MonoBehaviour
 
         if (transform.position.x > screenWidth || transform.position.x < -screenWidth || transform.position.y > screenHeight || transform.position.y < -screenHeight)
         {
-            GameManager.instance.EagleEscape();
+            GameManager.Instance.EagleEscape();
             Destroy(gameObject);
         }
 
@@ -66,9 +66,9 @@ public class Eagle : MonoBehaviour
         {
             rb.gravityScale = 1.0f;
             anim.SetBool("dead", true);
-            AudioManager.instance.PlayEagleDieSound();
-            GameManager.instance.AddScore(10);
-            GameManager.instance.AddCoin(5);
+            AudioManager.Instance.PlayEagleDieSound();
+            GameManager.Instance.AddScore(10);
+            GameManager.Instance.AddCoin(5);
             Destroy(gameObject, .25f);
         }
     }

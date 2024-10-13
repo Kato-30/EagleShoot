@@ -21,17 +21,17 @@ public class GameUI : MonoBehaviour
 
         if (customCursor != null)
         {
-            GameManager.instance.SetCursor(customCursor);
+            GameManager.Instance.SetCursor(customCursor);
         }
     }
 
     void Update()
     {
-        score.SetText(GameManager.instance.GetScore().ToString());
-        currentScore.SetText(GameManager.instance.GetScore().ToString());
+        score.SetText(GameManager.Instance.GetScore().ToString());
+        currentScore.SetText(GameManager.Instance.GetScore().ToString());
         highestScore.SetText(PlayerPrefs.GetInt("highScore").ToString());
-        coin.SetText(GameManager.instance.GetCoin().ToString());
-        bullet.SetText(GameManager.instance.GetBullet().ToString());
+        coin.SetText(GameManager.Instance.GetCoin().ToString());
+        bullet.SetText(GameManager.Instance.GetBullet().ToString());
     }
 
     public void Menu()
